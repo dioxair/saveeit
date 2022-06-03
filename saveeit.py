@@ -24,8 +24,22 @@ def main():
 
     main.soundURL = "https://v.redd.it/" + main.vidURL.split("/")[3] + "/DASH_audio.mp4"
 
-    print("")
-
     print("Got sound URL!")
 
     print("")
+
+def downloadMP4():
+    with open(main.nameOfVid + ".mp4", "wb") as w:
+        vidDL = requests.get(main.vidURL, stream = True)
+        w.write(vidDL.content)
+
+    print("Downloaded mp4!")
+
+    print("")
+
+def downloadMP3():
+    with open(main.nameOfAudio + ".mp3", "wb") as w:
+        audioDL = requests.get(main.soundURL, stream = True)
+        w.write(audioDL.content)
+
+    print("Downloaded mp3!")
