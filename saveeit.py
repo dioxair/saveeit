@@ -1,9 +1,13 @@
 import os
 import requests
 import datetime
+import shutil
+
+def centerPrint(a):
+    print(a.center(shutil.get_terminal_size().columns))
 
 def main():
-    print("Please enter the URL of the Reddit video you want to download.")
+    centerPrint("Please enter the URL of the Reddit video you want to download.")
 
     redditURL = input(">> ")[:-1]+".json"
 
@@ -16,33 +20,33 @@ def main():
     main.nameOfVid = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "vid"
     main.nameOfAudio = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "audio"
 
-    print("")
+    centerPrint("")
 
-    print("Got video URL!")
+    centerPrint("Got video URL!")
 
-    print("")
+    centerPrint("")
 
     main.soundURL = "https://v.redd.it/" + main.vidURL.split("/")[3] + "/DASH_audio.mp4"
 
-    print("Got sound URL!")
+    centerPrint("Got sound URL!")
 
-    print("")
+    centerPrint("")
 
 def downloadMP4():
     with open(main.nameOfVid + ".mp4", "wb") as w:
         vidDL = requests.get(main.vidURL, stream = True)
         w.write(vidDL.content)
 
-    print("Downloaded mp4!")
+    centerPrint("Downloaded mp4!")
 
-    print("")
+    centerPrint("")
 
 def downloadMP3():
     with open(main.nameOfAudio + ".mp3", "wb") as w:
         audioDL = requests.get(main.soundURL, stream = True)
         w.write(audioDL.content)
 
-    print("Downloaded mp3!")
+    centerPrint("Downloaded mp3!")
 
 def combine_audio(vidname, audname, outname, fps=60): 
     import moviepy.editor as mpe
