@@ -17,8 +17,8 @@ def main():
 
     main.vidURL = jsonData["data"]["children"][0]["data"]["secure_media"]["reddit_video"]["fallback_url"] # Gets the video URL
 
-    main.nameOfVid = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "vid"
-    main.nameOfAudio = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "audio"
+    main.nameOfVid = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "vid" # The name of the video file
+    main.nameOfAudio = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "audio" # The name of the audio file
 
     centerPrint("")
 
@@ -26,7 +26,7 @@ def main():
 
     centerPrint("")
 
-    main.soundURL = "https://v.redd.it/" + main.vidURL.split("/")[3] + "/DASH_audio.mp4"
+    main.soundURL = "https://v.redd.it/" + main.vidURL.split("/")[3] + "/DASH_audio.mp4" # Gets the audio URL
 
     centerPrint("Got sound URL!")
 
@@ -62,3 +62,5 @@ downloadMP3()
 
 combine_audio(main.nameOfVid + ".mp4", main.nameOfAudio + ".mp3", datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "FINALCOMBINED.mp4")
 os.system("rm " + main.nameOfVid + ".mp4 " + main.nameOfAudio + ".mp3")
+
+# combines the 2 audio and video files and removes them
