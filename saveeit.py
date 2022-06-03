@@ -12,6 +12,8 @@ def main():
 
     vidURL = jsonData["data"]["children"][0]["data"]["secure_media"]["reddit_video"]["fallback_url"] # Gets the video URL
 
+    main.idOfVid = jsonData["data"]["children"][0]["data"]["name"]
+
     print("")
 
     print("Got video URL!")
