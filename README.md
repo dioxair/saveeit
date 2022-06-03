@@ -22,6 +22,15 @@ python3 -m pip install -r requirements.txt
 
 And you're ready to go!
 
+# Usage (part 1)
+You can run `saveeit` with
+
+```console
+python3 saveeit.py
+```
+
+# Usage (part 2)
+
 Optionally, you can make `saveeit` a global command so you can execute it anywhere in your UNIX system with this command:
 
 ```console
