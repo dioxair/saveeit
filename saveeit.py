@@ -17,3 +17,11 @@ def main():
     print("Got video URL!")
 
     print("")
+
+    soundURL = "https://v.redd.it/" + vidURL.split("/")[3] + "/DASH_audio.mp4"
+
+    print("")
+
+    print("Got sound URL!")
+
+    print("")
