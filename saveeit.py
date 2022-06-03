@@ -43,3 +43,18 @@ def downloadMP3():
         w.write(audioDL.content)
 
     print("Downloaded mp3!")
+
+def combine_audio(vidname, audname, outname, fps=60): 
+    import moviepy.editor as mpe
+    my_clip = mpe.VideoFileClip(vidname)
+    audio_background = mpe.AudioFileClip(audname)
+    final_clip = my_clip.set_audio(audio_background)
+    final_clip.write_videofile(outname,fps=fps)
+    # https://stackoverflow.com/questions/63881088/how-to-merge-mp3-and-mp4-in-python-mute-a-mp4-file-and-add-a-mp3-file-on-it
+
+main()
+downloadMP4()
+downloadMP3()
+
+combine_audio(main.nameOfVid + ".mp4", main.nameOfAudio + ".mp3", datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "FINALCOMBINED.mp4")
+os.system("rm " + main.nameOfVid + ".mp4 " + main.nameOfAudio + ".mp3")
