@@ -1,5 +1,6 @@
 import os
 import requests
+import datetime
 
 def main():
     print("Please enter the URL of the Reddit video you want to download.")
@@ -12,7 +13,8 @@ def main():
 
     vidURL = jsonData["data"]["children"][0]["data"]["secure_media"]["reddit_video"]["fallback_url"] # Gets the video URL
 
-    main.idOfVid = jsonData["data"]["children"][0]["data"]["name"]
+    main.nameOfVid = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "vid"
+    main.nameOfAudio = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "audio"
 
     print("")
 
