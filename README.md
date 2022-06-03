@@ -9,15 +9,10 @@
 # Requirements:
 
 `Python 3.10.4`
-<<<<<<< HEAD
 
 `git`
 
 `A UNIX terminal (Linux, macOS, etc.)`
-=======
-`git`
-`A UNIX terminal (Linux, macOS, etc.)
->>>>>>> aa9bccb1684560d61c2e8ce2be8b3b0515b698af
 
 # Installation
 
