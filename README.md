@@ -4,7 +4,7 @@
   ![demonstration](https://dioxair.needs.rest/r/saveeit.gif)
 </h1>
 
-## Download Reddit hosted videos in the terminal!
+## Download Reddit hosted videos your UNIX terminal!
 
 # Installation
 
