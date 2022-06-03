@@ -11,7 +11,7 @@ def main():
     
     jsonData = request.json()[0]
 
-    vidURL = jsonData["data"]["children"][0]["data"]["secure_media"]["reddit_video"]["fallback_url"] # Gets the video URL
+    main.vidURL = jsonData["data"]["children"][0]["data"]["secure_media"]["reddit_video"]["fallback_url"] # Gets the video URL
 
     main.nameOfVid = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "vid"
     main.nameOfAudio = jsonData["data"]["children"][0]["data"]["name"] + datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S") + "audio"
@@ -22,7 +22,7 @@ def main():
 
     print("")
 
-    soundURL = "https://v.redd.it/" + vidURL.split("/")[3] + "/DASH_audio.mp4"
+    main.soundURL = "https://v.redd.it/" + main.vidURL.split("/")[3] + "/DASH_audio.mp4"
 
     print("")
 
