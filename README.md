@@ -6,6 +6,12 @@
 
 ## Download Reddit hosted videos your UNIX terminal!
 
+# Requirements:
+
+`Python 3.10.4`
+`git`
+`A UNIX terminal (Linux, macOS, etc.)
+
 # Installation
 
 Clone the repository and change the directory to the downloaded repository
