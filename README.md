@@ -1,7 +1,7 @@
 <h1 align="center">
   saveeit
   
-  ![demonstration](https://dioxair.needs.rest/r/saveeit.gif)
+  ![demonstration](https://dioxair.needs.rest/r/saveeit-2.gif)
 </h1>
 
 ## Download Reddit hosted videos your UNIX terminal!
